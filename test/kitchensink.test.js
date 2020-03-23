@@ -97,7 +97,7 @@ describe('app', () => {
       );
       expect(resp.status).toEqual(200);
       expect(resp.type).toEqual('image/jpeg');
-      expect(resp.body.length).toBeGreaterThan(10000);
+      expect(resp.body).toMatchImageSnapshot();
     });
 
     test('sequence diagram', async () => {
@@ -106,7 +106,7 @@ describe('app', () => {
       );
       expect(resp.status).toEqual(200);
       expect(resp.type).toEqual('image/jpeg');
-      expect(resp.body.length).toBeGreaterThan(10000);
+      expect(resp.body).toMatchImageSnapshot();
     });
 
     test('class diagram', async () => {
@@ -115,7 +115,7 @@ describe('app', () => {
       );
       expect(resp.status).toEqual(200);
       expect(resp.type).toEqual('image/jpeg');
-      expect(resp.body.length).toBeGreaterThan(10000);
+      expect(resp.body).toMatchImageSnapshot();
     });
 
     test('state diagram', async () => {
@@ -124,7 +124,7 @@ describe('app', () => {
       );
       expect(resp.status).toEqual(200);
       expect(resp.type).toEqual('image/jpeg');
-      expect(resp.body.length).toBeGreaterThan(10000);
+      expect(resp.body).toMatchImageSnapshot();
     });
 
     test('gantt chart', async () => {
@@ -133,7 +133,7 @@ describe('app', () => {
       );
       expect(resp.status).toEqual(200);
       expect(resp.type).toEqual('image/jpeg');
-      expect(resp.body.length).toBeGreaterThan(10000);
+      expect(resp.body).toMatchImageSnapshot();
     });
 
     test('pie chart', async () => {
@@ -142,7 +142,7 @@ describe('app', () => {
       );
       expect(resp.status).toEqual(200);
       expect(resp.type).toEqual('image/jpeg');
-      expect(resp.body.length).toBeGreaterThan(10000);
+      expect(resp.body).toMatchImageSnapshot();
     });
 
     test('returns 400 when encoded code is invalid', async () => {
