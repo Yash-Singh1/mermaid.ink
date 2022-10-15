@@ -25,8 +25,16 @@
       const container = document.querySelector('#container');
       const render = (definition, config) =>
         new Promise((resolve, reject) => {
-          mermaid.initialize({ ...config, startOnLoad: false });
+          mermaid.initialize({
+            pie: {
+              useWidth: '600',
+            },
+            ...config,
+            startOnLoad: false,
+          });
           mermaid.render('mermaid-svg', definition, (svgCode) => {
+            // // TODO: Calculate based on stroke
+            // svgCode = svgCode.replace('viewBox="0 0 600 450', ' viewbox="0 0 600 413.4');
             container.innerHTML = svgCode;
             const style = document.createElement('style');
             style.innerText =

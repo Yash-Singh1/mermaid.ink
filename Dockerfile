@@ -1,6 +1,7 @@
 # based on: https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#running-puppeteer-in-docker
 FROM docker.io/library/node:17-buster-slim
 LABEL maintainer="Jihchi Lee <achi@987.tw>"
+ENV PORT "8080"
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
@@ -48,4 +49,4 @@ RUN usermod -a -G audio,video node \
 USER node
 CMD ["yarn", "start"]
 
-EXPOSE 3000
+EXPOSE 8080
