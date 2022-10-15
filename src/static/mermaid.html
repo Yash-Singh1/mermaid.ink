@@ -33,6 +33,10 @@
             startOnLoad: false,
           });
           mermaid.render('mermaid-svg', definition, (svgCode) => {
+            if (definition.includes('git')) {
+              svgCode = svgCode.replace(/width=".*?"/, '');
+              svgCode = svgCode.replace(/height=".*?"/, '');
+            }
             // // TODO: Calculate based on stroke
             // svgCode = svgCode.replace('viewBox="0 0 600 450', ' viewbox="0 0 600 413.4');
             container.innerHTML = svgCode;
